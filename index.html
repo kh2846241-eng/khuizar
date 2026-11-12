@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Khizar | Portfolio</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #070b14;
+            color: white;
+            line-height: 1.6;
+        }
+
+
+        /* NAVBAR */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 8%;
+
+            background: rgba(7, 11, 20, 0.92);
+            backdrop-filter: blur(10px);
+
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 22px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+
+        /* HERO SECTION */
+
+        .hero {
+            min-height: 92vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 60px 20px;
+
+            background:
+                radial-gradient(circle at top, #123158, transparent 45%),
+                linear-gradient(135deg, #070b14, #0c172a);
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .profile {
+            width: 180px;
+            height: 180px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 4px solid #38bdf8;
+
+            padding: 4px;
+
+            margin-bottom: 25px;
+
+            box-shadow: 0 0 35px rgba(56, 189, 248, 0.35);
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero h2 {
+            color: #94a3b8;
+            font-size: 23px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 750px;
+            margin: auto;
+
+            font-size: 18px;
+            color: #cbd5e1;
+        }
+
+        .urdu {
+            direction: rtl;
+            margin-top: 18px !important;
+            font-size: 19px !important;
+        }
+
+
+        /* BUTTONS */
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+
+            padding: 13px 28px;
+
+            margin: 7px;
+
+            text-decoration: none;
+
+            border-radius: 10px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .main-btn {
+            background: #38bdf8;
+            color: #07111f;
+        }
+
+        .second-btn {
+            border: 1px solid #38bdf8;
+            color: #38bdf8;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+        }
+
+
+        /* GENERAL SECTIONS */
+
+        section {
+            padding: 85px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+
+            font-size: 38px;
+
+            margin-bottom: 45px;
+        }
+
+        .section-title span {
+            color: #38bdf8;
+        }
+
+
+        /* ABOUT */
+
+        .about-box {
+            max-width: 900px;
+
+            margin: auto;
+
+            padding: 35px;
+
+            background: #0f172a;
+
+            border: 1px solid #1e293b;
+
+            border-radius: 18px;
+
+            box-shadow: 0 10px 35px rgba(0,0,0,0.3);
+        }
+
+        .about-box p {
+            color: #cbd5e1;
+            font-size: 18px;
+            margin-bottom: 18px;
+        }
+
+        .location {
+            margin-top: 25px;
+
+            color: #38bdf8 !important;
+
+            font-weight: bold;
+        }
+
+
+        /* SKILLS */
+
+        .skills-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+
+            gap: 22px;
+        }
+
+        .skill-card {
+            padding: 30px 22px;
+
+            background: #0f172a;
+
+            border: 1px solid #1e293b;
+
+            border-radius: 16px;
+
+            text-align: center;
+
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-7px);
+
+            border-color: #38bdf8;
+        }
+
+        .skill-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .skill-card h3 {
+            color: #38bdf8;
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+            color: #94a3b8;
+        }
+
+
+        /* PROJECTS */
+
+        .projects-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(260px, 1fr));
+
+            gap: 25px;
+        }
+
+        .project-card {
+            overflow: hidden;
+
+            background: #0f172a;
+
+            border-radius: 16px;
+
+            border: 1px solid #1e293b;
+
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 220px;
+
+            object-fit: cover;
+
+            background: #111827;
+        }
+
+        .project-info {
+            padding: 22px;
+        }
+
+        .project-info h3 {
+            color: #38bdf8;
+            margin-bottom: 10px;
+        }
+
+        .project-info p {
+            color: #94a3b8;
+        }
+
+
+        /* CONTACT */
+
+        .contact {
+            text-align: center;
+
+            background: #0a052c;
+        }
+
+        .contact p {
+            max-width: 700px;
+
+            margin: auto;
+
+            color: #cbd5e1;
+
+            font-size: 18px;
+        }
+
+        .whatsapp-btn {
+            display: inline-block;
+
+            margin-top: 30px;
+
+            padding: 15px 32px;
+
+            border-radius: 12px;
+
+            text-decoration: none;
+
+            background: #25D366;
+
+            color: rgb(0, 0, 0);
+
+            font-weight: bold;
+
+            font-size: 18px;
+
+            transition: 0.3s;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.05);
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            padding: 25px;
+
+            text-align: center;
+
+            background: #531c6c;
+
+            color: #64748b;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 16px 5%;
+            }
+
+            nav .links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero h2 {
+                font-size: 19px;
+            }
+
+            .profile {
+                width: 145px;
+                height: 145px;
+            }
+
+            section {
+                padding: 65px 5%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="logo">
+        KHIZAR
+    </div>
+
+    <div class="links">
+
+        <a href="#about">
+            About
+        </a>
+
+        <a href="#skills">
+            Skills
+        </a>
+
+        <a href="#projects">
+            Work
+        </a>
+
+        <a href="#contact">
+            Contact
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- HOME -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <img
+            class="profile"
+            src="profile.png.png"
+            alt="Khizar"
+        >
+
+        <h1>
+            Hello, I'm
+            <span>Khizar</span>
+        </h1>
+
+        <h2>
+            Coding • Python • 3D • Video Editing • Cyber Security
+        </h2>
+
+        <p>
+            I explore technology, programming and digital creativity.
+            I work on coding projects, Python applications, 3D design,
+            video editing and cyber security while continuously learning
+            new technologies and improving my skills.
+        </p>
+
+        <p class="urdu">
+
+            میرا نام خضر ہے۔ میں ٹیکنالوجی اور ڈیجیٹل کاموں میں دلچسپی رکھتا ہوں۔
+            میں کوڈنگ، پائتھن، تھری ڈی ڈیزائن، ویڈیو ایڈیٹنگ اور سائبر سکیورٹی
+            پر کام اور سیکھ رہا ہوں۔ میرا مقصد نئی ٹیکنالوجی سیکھ کر
+            مفید، خوبصورت اور جدید ڈیجیٹل منصوبے بنانا ہے۔
+
+        </p>
+
+        <div class="buttons">
+
+            <a
+                href="#projects"
+                class="btn main-btn"
+            >
+                View My Work
+            </a>
+
+            <a
+                href="#contact"
+                class="btn second-btn"
+            >
+                Contact Me
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <h2 class="section-title">
+
+        About
+        <span>Me</span>
+
+        | میرے بارے میں
+
+    </h2>
+
+
+    <div class="about-box">
+
+        <p>
+
+            My name is Khizar.
+            I am from Fateh Jang, District Attock, Pakistan.
+            Technology and creative digital work are important
+            parts of my learning journey.
+
+        </p>
+
+
+        <p>
+
+            My interests include programming, Python development,
+            3D design, video editing, artificial intelligence and
+            cyber security. I enjoy experimenting with new tools,
+            building projects and learning how modern technology works.
+
+        </p>
+
+
+        <p class="urdu">
+
+            میرا نام خضر ہے اور میرا تعلق فتح جنگ، ضلع اٹک، پاکستان سے ہے۔
+            مجھے کمپیوٹر اور جدید ٹیکنالوجی سے خاص دلچسپی ہے۔
+            میں کوڈنگ، پائتھن، تھری ڈی ڈیزائن، ویڈیو ایڈیٹنگ،
+            مصنوعی ذہانت اور سائبر سکیورٹی کی مہارتوں پر کام کر رہا ہوں۔
+
+        </p>
+
+
+        <p class="urdu">
+
+            مجھے نئی چیزیں سیکھنا، خود پراجیکٹس بنانا اور اپنے کام کو
+            بہتر سے بہتر بنانا پسند ہے۔ اس ویب سائٹ پر آپ میرے مختلف
+            ڈیجیٹل کام اور پراجیکٹس دیکھ سکتے ہیں۔
+
+        </p>
+
+
+        <p class="location">
+
+            📍 Fateh Jang, District Attock, Pakistan
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <h2 class="section-title">
+
+        My
+        <span>Skills</span>
+
+        | میری مہارتیں
+
+    </h2>
+
+
+    <div class="skills-grid">
+
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+                💻
+            </div>
+
+            <h3>
+                Coding
+            </h3>
+
+            <p>
+                Learning programming and building
+                different digital projects.
+            </p>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+                🐍
+            </div>
+
+            <h3>
+                Python
+            </h3>
+
+            <p>
+                Creating programs and learning
+                application development with Python.
+            </p>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+                🎨
+            </div>
+
+            <h3>
+                3D Design
+            </h3>
+
+            <p>
+                Learning and creating 3D designs
+                and digital visual projects.
+            </p>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+                🎬
+            </div>
+
+            <h3>
+                Video Editing
+            </h3>
+
+            <p>
+                Editing videos and creating
+                engaging digital content.
+            </p>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+                🔐
+            </div>
+
+            <h3>
+                Cyber Security
+            </h3>
+
+            <p>
+                Learning cyber security concepts,
+                tools and digital security.
+            </p>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+                🤖
+            </div>
+
+            <h3>
+                Artificial Intelligence
+            </h3>
+
+            <p>
+                Exploring AI tools and using
+                artificial intelligence in creative projects.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+    <h2 class="section-title">
+
+        My
+        <span>Work</span>
+
+        | میرا کام
+
+    </h2>
+
+
+    <div class="projects-grid">
+
+
+        <div class="project-card">
+
+            <img
+                src="project1.  .jpg"
+                alt="Coding Project"
+            >
+
+            <div class="project-info">
+
+                <h3>
+                    Coding & Python
+                </h3>
+
+                <p>
+                    Programming projects and applications
+                    created while learning Python and coding.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="project-card">
+
+            <img
+                src="project2.  .jpg"
+                alt="3D Design"
+            >
+
+            <div class="project-info">
+
+                <h3>
+                    3D Design
+                </h3>
+
+                <p>
+                    My experiments and creative work
+                    related to 3D design.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="project-card">
+
+            <img
+                src="project3.  .jpg"
+                alt="Video Editing"
+            >
+
+            <div class="project-info">
+
+                <h3>
+                    Video Editing
+                </h3>
+
+                <p>
+                    Video editing and creative
+                    digital content projects.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- CONTACT -->
+
+<section
+    id="contact"
+    class="contact"
+>
+
+    <h2 class="section-title">
+
+        Contact
+        <span>Me</span>
+
+        | رابطہ
+
+    </h2>
+
+
+    <p>
+
+        If you want to discuss a project,
+        collaboration or digital work,
+        you can contact me directly on WhatsApp.
+
+    </p>
+
+
+    <p class="urdu">
+
+        اگر آپ کسی پراجیکٹ، کام یا تعاون کے بارے میں
+        مجھ سے رابطہ کرنا چاہتے ہیں تو واٹس ایپ کے ذریعے
+        براہ راست پیغام بھیج سکتے ہیں۔
+
+    </p>
+
+
+    <a
+        class="whatsapp-btn"
+        href="https://wa.me/9647864607927"
+        target="_blank"
+    >
+
+        💬 WhatsApp Me
+
+    </a>
+
+
+    <p style="margin-top:20px;">
+
+        +964 7864607927
+
+    </p>
+
+</section>
+
+
+
+<footer>
+
+    © 2026 Khizar Portfolio — All Rights Reserved
+
+</footer>
+
+
+</body>
+
+</html>
